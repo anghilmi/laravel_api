@@ -29,7 +29,9 @@ class ProdukApiController extends Controller
         return response()->json([
             'message' => 'sukses',
             'nama_produk'=> $request->nama_produk,
-            'deskripsi_produk' => $request->deskripsi_produk             
+            'deskripsi_produk' => $request->deskripsi_produk,     
+            'harga_produk' => $request->harga_produk, 
+            'url_produk' => $request->url_produk         
         ]);
     }
 
