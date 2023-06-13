@@ -35,12 +35,17 @@ class ProdukApiController extends Controller
         ]);
     }
 
-    public function updateProduk(Request $request,$id){
+    public function updateProduk(Request $request, $id){
+        // $produk = Produk::find($request->id_produk);
         $produk = Produk::find($id);
+
         $produk->update($request->all());
         return response()->json([
             'message' => 'sukses',
-            'data'=> $produk            
+            'nama_produk'=> $request->nama_produk,
+            'deskripsi_produk' => $request->deskripsi_produk,     
+            'harga_produk' => $request->harga_produk, 
+            'url_produk' => $request->url_produk                
         ]);
     }
 
@@ -48,8 +53,8 @@ class ProdukApiController extends Controller
         $produk = Produk::find($id);
         $produk->delete();
         return response()->json([
-            'message' => 'sukses',
-            'data'=> null            
+            'message' => 'sukses'
+                     
         ]);
     }
 }
