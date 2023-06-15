@@ -1,5 +1,7 @@
 ## Run
+```
 php artisan serve --host=your_computer_ip
+```
 
 ## Kotlin + Jetpack Compose Frontend
 
